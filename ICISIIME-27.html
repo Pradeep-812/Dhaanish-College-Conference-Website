@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICISIIME 2027 | Dhaanish Chennai</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS Variables --- */
+        :root {
+            --primary: #0F172A; /* Dark Slate */
+            --primary-light: #1E293B;
+            --accent: #0EA5E9; /* Vibrant Blue */
+            --accent-hover: #0284C7;
+            --secondary: #F59E0B; /* Amber/Gold */
+            --bg-body: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --text-main: #334155;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 16px;
+        }
+
+        /* --- Reset & Base --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title span {
+            color: var(--accent);
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- Navbar --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 15px 0;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1001;
+        }
+
+        .logo i {
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+
+        .logo img {
+            width: auto;
+            height: 72px;
+            max-width: 260px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-btn {
+            background: var(--primary);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600 !important;
+        }
+
+        .nav-btn:hover {
+            background: var(--accent);
+            color: white !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+            z-index: 1001;
+        }
+
+        /* --- Hero Section --- */
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #F8FAFC 0%, #E0F2FE 100%);
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative background blobs */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.5;
+        }
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            top: -100px;
+            right: -100px;
+        }
+        .blob-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--secondary);
+            bottom: -50px;
+            left: -50px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(to right, var(--accent), #2563EB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 24px;
+            border: 1px solid rgba(14, 165, 233, 0.2);
+        }
+
+        .hero-desc {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 90%;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .meta-item i {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(14, 165, 233, 0.39);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(14, 165, 233, 0.39);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-body);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            border: 4px solid white;
+        }
+
+        /* Floating card over hero image */
+        .floating-card {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .floating-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        .floating-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .floating-card p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* --- About Section --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .about-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .about-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .about-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .about-card h3 i {
+            color: var(--accent);
+        }
+
+        .about-card p {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* --- Objectives Section --- */
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .obj-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .obj-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .obj-card:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .obj-card:hover::before {
+            width: 100%;
+            opacity: 0.05;
+        }
+
+        .obj-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .obj-card h4 {
+            font-size: 1.125rem;
+            margin-bottom: 10px;
+        }
+
+        .obj-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Tracks Section --- */
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .track-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .track-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .track-header {
+            background: var(--primary);
+            padding: 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .track-header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            rotate: 45deg;
+        }
+
+        .track-header h3 {
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+
+        .track-body {
+            padding: 30px 24px 24px;
+            flex-grow: 1;
+        }
+
+        .track-body ul {
+            list-style: none;
+        }
+
+        .track-body li {
+            padding: 10px 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-bottom: 1px dashed var(--border-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .track-body li:last-child {
+            border-bottom: none;
+        }
+
+        .track-body li i {
+            color: var(--accent);
+            margin-top: 4px;
+            font-size: 0.75rem;
+        }
+
+        /* --- Timeline Section --- */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        .timeline-content {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            width: 80%;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.02);
+            border-color: var(--accent);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 40px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 24px;
+            right: -50%;
+            transform: translateX(50%);
+            width: 16px;
+            height: 16px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 4px solid var(--bg-body);
+            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2);
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -50%;
+            right: auto;
+            transform: translateX(-50%);
+        }
+
+        .timeline-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* --- Committee Section --- */
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            text-align: center;
+        }
+
+        .member-card {
+            background: var(--bg-card);
+            padding: 30px 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .member-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+        }
+
+        .member-avatar {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-body);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--accent);
+            border: 3px solid white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .member-role {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .member-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .member-title {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Registration & Fees --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .pricing-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-md);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .pricing-role {
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .pricing-amount {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+
+        .pricing-amount span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .publication-note {
+            background: #E0F2FE;
+            border-left: 4px solid var(--accent);
+            padding: 24px;
+            border-radius: 8px;
+            color: var(--primary-light);
+        }
+
+        .publication-note i {
+            color: var(--accent);
+            margin-right: 8px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--primary);
+            color: #94A3B8;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-brand h2 i {
+            color: var(--accent);
+        }
+
+        .footer-brand p {
+            margin-bottom: 24px;
+            max-width: 400px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 24px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-col p {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .footer-col p i {
+            color: var(--accent);
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.875rem;
+        }
+
+        /* --- Animations --- */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 2.8rem; }
+            .hero-desc { margin: 0 auto 32px; }
+            .hero-meta { justify-content: center; }
+            .hero-buttons { justify-content: center; }
+            .hero-image { display: none; } /* Hide image on tablets to save space */
+            
+            .tracks-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: var(--bg-card);
+                flex-direction: column;
+                justify-content: center;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .about-grid { grid-template-columns: 1fr; }
+            .tracks-grid { grid-template-columns: 1fr; }
+            
+            .timeline::before { left: 20px; }
+            .timeline-item { justify-content: flex-start; padding-left: 50px; padding-right: 0; }
+            .timeline-item:nth-child(even) { padding-left: 50px; }
+            .timeline-content { width: 100%; margin-left: 0 !important; margin-right: 0 !important; }
+            .timeline-dot { left: 20px !important; right: auto !important; transform: translateX(-50%) !important; }
+            
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-text h1 { font-size: 2.2rem; }
+            .hero-meta { flex-direction: column; align-items: center; gap: 16px; }
+            .hero-buttons { flex-direction: column; }
+            .logo img { height: 58px; max-width: 220px; }
+            .footer-brand img { height: 64px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="ICISIIME-27-logo.png" alt="ICISIIME 2027">
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#objectives">Objectives</a></li>
+                <li><a href="#tracks">Tracks</a></li>
+                <li><a href="#dates">Timeline</a></li>
+                <li><a href="#committee">Committee</a></li>
+                <li><a href="#registration" class="nav-btn">Register</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text fade-up"><br>
+                    <span class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> Dhaanish Chennai College of Engineering</span>
+                    <h1>International Conference on <span>Intelligent Systems</span>, Industrial Innovation & Management Excellence</h1>
+                    <p class="hero-desc">Bridging Intelligent Technologies, Engineering Innovation and Transformative Management for a Sustainable Future.</p>
+                    
+                    <div class="hero-meta">
+                        <div class="meta-item">
+                            <i class="fa-regular fa-calendar-days"></i>
+                            <div>
+                                <span style="display:block; font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">Date</span>
+                                4th & 5th March 2027
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <span style="display:block; font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">Venue</span>
+                                Crystal Hall, Chennai
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="#registration" class="btn btn-primary">Submit Paper <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+                        <a href="#about" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="hero-image fade-up">
+                    <!-- Using a placeholder tech/conference image -->
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Conference Audience">
+                    <div class="floating-card">
+                        <i class="fa-solid fa-microchip"></i>
+                        <div>
+                            <h4>6 Technical Tracks</h4>
+                            <p>Explore cutting-edge research</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">About The <span>Conference</span></h2>
+                <p class="section-subtitle">Bringing together researchers, academicians, industry experts, and students to discuss emerging technologies.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card fade-up">
+                    <h3><i class="fa-solid fa-building-columns"></i> Our Institution</h3>
+                    <p>Dhaanish Chennai College of Engineering is committed to academic excellence, technological advancement, research innovation and holistic student development. The institution strives to create a dynamic learning environment that encourages interdisciplinary research, industry collaboration and the development of future-ready professionals.</p>
+                </div>
+                <div class="about-card fade-up">
+                    <h3><i class="fa-solid fa-bullseye"></i> ICISIIME 2027</h3>
+                    <p>The International Conference on Intelligent Systems, Industrial Innovation and Management Excellence aims to provide a premier platform to discuss emerging technologies, innovative engineering solutions and contemporary management practices. Join us to bridge the gap between intelligent tech, engineering, and transformative management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section id="objectives" class="section-padding" style="background: white;">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Conference <span>Objectives</span></h2>
+            </div>
+            
+            <div class="objectives-grid">
+                <div class="obj-card fade-up">
+                    <i class="fa-solid fa-globe obj-icon"></i>
+                    <h4>Global Platform</h4>
+                    <p>Provide a global platform for innovative research and collaboration.</p>
+                </div>
+                <div class="obj-card fade-up">
+                    <i class="fa-solid fa-diagram-project obj-icon"></i>
+                    <h4>Interdisciplinary Research</h4>
+                    <p>Promote interdisciplinary research across engineering and management.</p>
+                </div>
+                <div class="obj-card fade-up">
+                    <i class="fa-solid fa-handshake obj-icon"></i>
+                    <h4>Academia-Industry</h4>
+                    <p>Encourage collaboration between academia and industry experts.</p>
+                </div>
+                <div class="obj-card fade-up">
+                    <i class="fa-solid fa-robot obj-icon"></i>
+                    <h4>AI & Transformation</h4>
+                    <p>Explore AI and intelligent systems in industrial transformation.</p>
+                </div>
+                <div class="obj-card fade-up">
+                    <i class="fa-solid fa-leaf obj-icon"></i>
+                    <h4>Sustainability</h4>
+                    <p>Address challenges in sustainable engineering and energy.</p>
+                </div>
+                <div class="obj-card fade-up">
+                    <i class="fa-solid fa-rocket obj-icon"></i>
+                    <h4>Innovation</h4>
+                    <p>Promote entrepreneurship, start-ups, and disruptive innovation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracks Section -->
+    <section id="tracks" class="section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Themes & <span>Technical Tracks</span></h2>
+                <p class="section-subtitle">Original, unpublished research papers are invited from these areas.</p>
+            </div>
+
+            <div class="tracks-grid">
+                <!-- Track 1 -->
+                <div class="track-card fade-up">
+                    <div class="track-header">
+                        <h3>Computer Science & Intelligent Computing</h3>
+                    </div>
+                    <div class="track-body">
+                        <ul>
+                            <li><i class="fa-solid fa-circle"></i> AI and Machine Learning | Generative AI</li>
+                            <li><i class="fa-solid fa-circle"></i> Cloud and Edge Computing | Cybersecurity</li>
+                            <li><i class="fa-solid fa-circle"></i> Computer Vision and NLP | Deep Learning</li>
+                            <li><i class="fa-solid fa-circle"></i> Data Science and Big Data</li>
+                            <li><i class="fa-solid fa-circle"></i> IoT and Smart Computing | Quantum Computing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Track 2 -->
+                <div class="track-card fade-up">
+                    <div class="track-header">
+                        <h3>Electronics & Communication</h3>
+                    </div>
+                    <div class="track-body">
+                        <ul>
+                            <li><i class="fa-solid fa-circle"></i> VLSI Design & Semiconductor Technologies</li>
+                            <li><i class="fa-solid fa-circle"></i> 5G/6G Communication Systems</li>
+                            <li><i class="fa-solid fa-circle"></i> Embedded Systems and IoT</li>
+                            <li><i class="fa-solid fa-circle"></i> Nanoelectronics and Photonics</li>
+                            <li><i class="fa-solid fa-circle"></i> Signal & Image Processing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Track 3 -->
+                <div class="track-card fade-up">
+                    <div class="track-header">
+                        <h3>Electrical & Electronics</h3>
+                    </div>
+                    <div class="track-body">
+                        <ul>
+                            <li><i class="fa-solid fa-circle"></i> Renewable Energy Technologies</li>
+                            <li><i class="fa-solid fa-circle"></i> Electric Vehicles and Charging</li>
+                            <li><i class="fa-solid fa-circle"></i> Smart Grid and Microgrid Systems</li>
+                            <li><i class="fa-solid fa-circle"></i> Power Electronics and Drives</li>
+                            <li><i class="fa-solid fa-circle"></i> Smart Energy Monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Track 4 -->
+                <div class="track-card fade-up">
+                    <div class="track-header">
+                        <h3>Petroleum & Energy Tech</h3>
+                    </div>
+                    <div class="track-body">
+                        <ul>
+                            <li><i class="fa-solid fa-circle"></i> Advanced Drilling Technologies</li>
+                            <li><i class="fa-solid fa-circle"></i> Reservoir Engineering</li>
+                            <li><i class="fa-solid fa-circle"></i> AI in Petroleum Engineering</li>
+                            <li><i class="fa-solid fa-circle"></i> Carbon Capture and Storage</li>
+                            <li><i class="fa-solid fa-circle"></i> Sustainable Energy Management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Track 5 -->
+                <div class="track-card fade-up">
+                    <div class="track-header">
+                        <h3>Robotics & Automation</h3>
+                    </div>
+                    <div class="track-body">
+                        <ul>
+                            <li><i class="fa-solid fa-circle"></i> Industrial Robotics and Automation</li>
+                            <li><i class="fa-solid fa-circle"></i> Human-Robot Interaction</li>
+                            <li><i class="fa-solid fa-circle"></i> Digital Twin Technologies</li>
+                            <li><i class="fa-solid fa-circle"></i> Smart Manufacturing and Industry 5.0</li>
+                            <li><i class="fa-solid fa-circle"></i> Autonomous Vehicles and Drones</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Track 6 -->
+                <div class="track-card fade-up">
+                    <div class="track-header">
+                        <h3>Management & Business</h3>
+                    </div>
+                    <div class="track-body">
+                        <ul>
+                            <li><i class="fa-solid fa-circle"></i> Technology and Innovation Management</li>
+                            <li><i class="fa-solid fa-circle"></i> Digital Transformation and Industry 4.0</li>
+                            <li><i class="fa-solid fa-circle"></i> Entrepreneurship and Start-ups</li>
+                            <li><i class="fa-solid fa-circle"></i> Sustainable Business Practices</li>
+                            <li><i class="fa-solid fa-circle"></i> Business Analytics | Strategic Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Dates -->
+    <section id="dates" class="section-padding" style="background: white;">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Important <span>Dates</span></h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item fade-up">
+                    <div class="timeline-content">
+                        <h4>Call for Papers</h4>
+                        <div class="timeline-date">Ongoing</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-content">
+                        <h4>Abstract Submission Deadline</h4>
+                        <div class="timeline-date">11 Nov 2026</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-content">
+                        <h4>Abstract Acceptance Intimation</h4>
+                        <div class="timeline-date">25 Nov 2026</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-content">
+                        <h4>Full Paper Submission</h4>
+                        <div class="timeline-date">10 Dec 2026</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-content">
+                        <h4>Paper Acceptance Notification</h4>
+                        <div class="timeline-date">20 Jan 2027</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-content">
+                        <h4>Camera-Ready Submission</h4>
+                        <div class="timeline-date">5 Feb 2027</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-content">
+                        <h4>Last Date for Registration</h4>
+                        <div class="timeline-date">15 Feb 2027</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-content" style="border-color: var(--accent); background: #F0F9FF;">
+                        <h4>Conference Dates</h4>
+                        <div class="timeline-date" style="color: var(--primary);"><i class="fa-solid fa-star"></i> 4 & 5 Mar 2027</div>
+                    </div>
+                    <div class="timeline-dot" style="background: var(--secondary); box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2);"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Committee Section -->
+    <section id="committee" class="section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Organising <span>Committee</span></h2>
+            </div>
+
+            <div class="committee-grid">
+                <div class="member-card fade-up">
+                    <div class="member-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                    <span class="member-role">Chief Patron</span>
+                    <div class="member-name">Mr. Alhaj. K. Moosa</div>
+                    <div class="member-title">Chairman</div>
+                </div>
+                <div class="member-card fade-up">
+                    <div class="member-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                    <span class="member-role">Patron</span>
+                    <div class="member-name">Mr. M. Kadar Shah</div>
+                    <div class="member-title">Secretary</div>
+                </div>
+                <div class="member-card fade-up">
+                    <div class="member-avatar"><i class="fa-solid fa-user-graduate"></i></div>
+                    <span class="member-role">Patron</span>
+                    <div class="member-name">Dr. K. Senthamil Selvan</div>
+                    <div class="member-title">Principal</div>
+                </div>
+                <div class="member-card fade-up">
+                    <div class="member-avatar"><i class="fa-solid fa-user-gear"></i></div>
+                    <span class="member-role">Convener</span>
+                    <div class="member-name">Dr. J. Rahila</div>
+                    <div class="member-title">Dean Academics</div>
+                </div>
+                <div class="member-card fade-up">
+                    <div class="member-avatar"><i class="fa-solid fa-user-gear"></i></div>
+                    <span class="member-role">Convener</span>
+                    <div class="member-name">Dr. P. Shanmugaselvam</div>
+                    <div class="member-title">Dean Innovation & Incubation</div>
+                </div>
+                <div class="member-card fade-up">
+                    <div class="member-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+                    <span class="member-role">Conference Chair</span>
+                    <div class="member-name">Dr. P. Gurusamy</div>
+                    <div class="member-title">Dean IQAC</div>
+                </div>
+                <div class="member-card fade-up">
+                    <div class="member-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+                    <span class="member-role">Co-Chair</span>
+                    <div class="member-name">Dr. G. Rosline Nesa Kumari</div>
+                    <div class="member-title">Dean Student Affairs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="section-padding" style="background: white;">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Registration <span>Fees</span></h2>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card fade-up">
+                    <div class="pricing-role">UG / PG Students</div>
+                    <div class="pricing-amount">₹750</div>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Register</a>
+                </div>
+                <div class="pricing-card fade-up">
+                    <div class="pricing-role">Research Scholars</div>
+                    <div class="pricing-amount">₹1,000</div>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Register</a>
+                </div>
+                <div class="pricing-card fade-up popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-role">Faculty / Academicians</div>
+                    <div class="pricing-amount">₹1,000</div>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%;">Register</a>
+                </div>
+                <div class="pricing-card fade-up">
+                    <div class="pricing-role">Industry Professionals</div>
+                    <div class="pricing-amount">₹1,200</div>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Register</a>
+                </div>
+                <div class="pricing-card fade-up">
+                    <div class="pricing-role">International</div>
+                    <div class="pricing-amount">$50</div>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Register</a>
+                </div>
+            </div>
+
+            <div class="publication-note fade-up">
+                <p><i class="fa-solid fa-book-open"></i> <strong>Publication Opportunities:</strong> All accepted and presented papers will be published in the Conference Proceedings with ISBN. Selected high-quality papers will be recommended for publication in Scopus / WoS indexed journals (subject to journal policies).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand fade-up">
+                    <img src="ICISIIME-27-logo.png" alt="ICISIIME 2027" style="height: 72px; width: auto; max-width: 260px; object-fit: contain; margin-bottom: 20px;">
+                    <p>Bridging Intelligent Technologies, Engineering Innovation and Transformative Management for a Sustainable Future.</p>
+                    <div style="display: flex; gap: 16px; margin-top: 24px;">
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col fade-up">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Conference</a></li>
+                        <li><a href="#tracks">Call for Papers</a></li>
+                        <li><a href="#dates">Important Dates</a></li>
+                        <li><a href="#registration">Registration</a></li>
+                        <li><a href="#committee">Committee</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col fade-up">
+                    <h4>Contact Us</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Crystal Hall, Dhaanish Chennai College of Engineering, Chennai, Tamil Nadu, India.</p>
+                    <p><i class="fa-solid fa-user"></i> Dr. J. Rahila (Dean Academics)</p>
+                    <p><i class="fa-solid fa-phone"></i> +91 89391 00041</p>
+                    <p><i class="fa-solid fa-globe"></i> <a href="http://dhaanishchennai.in" style="color: #94A3B8; text-decoration: none;">dhaanishchennai.in</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; 2026-2027 ICISIIME. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const menuIcon = mobileToggle.querySelector('i');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Scroll Reveal Animation using Intersection Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
